@@ -134,6 +134,13 @@
             50% { opacity: 0.6; }
         }
 
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .gallery-item {
+                min-height: 200px; /* Fallback for aspect-ratio support */
+            }
+        }
+
         .hero h1 {
             font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 700;
@@ -410,11 +417,12 @@
             border-radius: 8px;
             cursor: pointer;
             aspect-ratio: 1;
-            background: #FFFFFF;
+            background: #f0f8ff;
             opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.5s ease;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid #B0E0E6;
+            will-change: opacity, transform;
         }
 
         .gallery-section.visible .gallery-item {
@@ -1098,52 +1106,52 @@
         <h2>humari pyaari memories 😘</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="assets/pic1.jpeg" alt="Memory 1">
+                <img src="assets/pic1.jpeg" alt="Memory 1" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic8.jpeg" alt="Memory 2">
+                <img src="assets/pic8.jpeg" alt="Memory 2" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic3.jpeg" alt="Memory 3">
+                <img src="assets/pic3.jpeg" alt="Memory 3" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic4.jpeg" alt="Memory 4">
+                <img src="assets/pic4.jpeg" alt="Memory 4" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic5.jpeg" alt="Memory 5">
+                <img src="assets/pic5.jpeg" alt="Memory 5" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic9.jpeg" alt="Memory 6">
+                <img src="assets/pic9.jpeg" alt="Memory 6" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic2.jpeg" alt="Memory 7">
+                <img src="assets/pic2.jpeg" alt="Memory 7" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic6.jpeg" alt="Memory 8">
+                <img src="assets/pic6.jpeg" alt="Memory 8" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic7.jpeg" alt="Memory 9">
+                <img src="assets/pic7.jpeg" alt="Memory 9" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic10.jpeg" alt="Memory 10">
+                <img src="assets/pic10.jpeg" alt="Memory 10" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic11.jpeg" alt="Memory 11">
+                <img src="assets/pic11.jpeg" alt="Memory 11" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic12.jpeg" alt="Memory 12">
+                <img src="assets/pic12.jpeg" alt="Memory 12" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic13.jpeg" alt="Memory 13">
+                <img src="assets/pic13.jpeg" alt="Memory 13" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic14.jpeg" alt="Memory 13">
+                <img src="assets/pic14.jpeg" alt="Memory 14" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic15.jpeg" alt="Memory 13">
+                <img src="assets/pic15.jpeg" alt="Memory 15" decoding="async">
             </div>
             <div class="gallery-item">
-                <img src="assets/pic16.jpeg" alt="Memory 13">
+                <img src="assets/pic16.jpeg" alt="Memory 16" decoding="async">
             </div>
         </div>
     </section>
@@ -1293,8 +1301,8 @@
 
         // Scroll animations
         const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px 50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
